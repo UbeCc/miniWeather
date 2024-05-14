@@ -184,11 +184,11 @@ contains
       call semi_discrete_step( state , state_tmp , state_tmp , dt / 2 , DIR_Z )
       call semi_discrete_step( state , state_tmp , state     , dt / 1 , DIR_Z )
     else
-      !z-direction second
+      !z-direction first
       call semi_discrete_step( state , state     , state_tmp , dt / 3 , DIR_Z )
       call semi_discrete_step( state , state_tmp , state_tmp , dt / 2 , DIR_Z )
       call semi_discrete_step( state , state_tmp , state     , dt / 1 , DIR_Z )
-      !x-direction first
+      !x-direction second
       call semi_discrete_step( state , state     , state_tmp , dt / 3 , DIR_X )
       call semi_discrete_step( state , state_tmp , state_tmp , dt / 2 , DIR_X )
       call semi_discrete_step( state , state_tmp , state     , dt / 1 , DIR_X )

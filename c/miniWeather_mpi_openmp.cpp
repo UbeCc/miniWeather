@@ -197,11 +197,11 @@ void perform_timestep( double *state , double *state_tmp , double *flux , double
     semi_discrete_step( state , state_tmp , state_tmp , dt / 2 , DIR_Z , flux , tend );
     semi_discrete_step( state , state_tmp , state     , dt / 1 , DIR_Z , flux , tend );
   } else {
-    //z-direction second
+    //z-direction first
     semi_discrete_step( state , state     , state_tmp , dt / 3 , DIR_Z , flux , tend );
     semi_discrete_step( state , state_tmp , state_tmp , dt / 2 , DIR_Z , flux , tend );
     semi_discrete_step( state , state_tmp , state     , dt / 1 , DIR_Z , flux , tend );
-    //x-direction first
+    //x-direction second
     semi_discrete_step( state , state     , state_tmp , dt / 3 , DIR_X , flux , tend );
     semi_discrete_step( state , state_tmp , state_tmp , dt / 2 , DIR_X , flux , tend );
     semi_discrete_step( state , state_tmp , state     , dt / 1 , DIR_X , flux , tend );

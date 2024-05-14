@@ -165,11 +165,11 @@ void perform_timestep( real3d const &state , real dt , int &direction_switch , F
     semi_discrete_step( state , state_tmp , state_tmp , dt / 2 , DIR_Z , fixed_data );
     semi_discrete_step( state , state_tmp , state     , dt / 1 , DIR_Z , fixed_data );
   } else {
-    //z-direction second
+    //z-direction first
     semi_discrete_step( state , state     , state_tmp , dt / 3 , DIR_Z , fixed_data );
     semi_discrete_step( state , state_tmp , state_tmp , dt / 2 , DIR_Z , fixed_data );
     semi_discrete_step( state , state_tmp , state     , dt / 1 , DIR_Z , fixed_data );
-    //x-direction first
+    //x-direction second
     semi_discrete_step( state , state     , state_tmp , dt / 3 , DIR_X , fixed_data );
     semi_discrete_step( state , state_tmp , state_tmp , dt / 2 , DIR_X , fixed_data );
     semi_discrete_step( state , state_tmp , state     , dt / 1 , DIR_X , fixed_data );

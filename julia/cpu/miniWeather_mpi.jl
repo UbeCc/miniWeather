@@ -478,7 +478,7 @@ function timestep!(state::OffsetArray{Float64, 3, Array{Float64, 3}},
         
     else
         
-        #z-direction second
+        #z-direction first
         semi_discrete_step!(state , state    , statetmp , dt / 3 , DIR_Z , flux , tend,
             recvbuf_l, recvbuf_r, sendbuf_l, sendbuf_r, hy_dens_cell, hy_dens_theta_cell,
             hy_dens_int, hy_dens_theta_int, hy_pressure_int)
@@ -491,7 +491,7 @@ function timestep!(state::OffsetArray{Float64, 3, Array{Float64, 3}},
             recvbuf_l, recvbuf_r, sendbuf_l, sendbuf_r, hy_dens_cell, hy_dens_theta_cell,
             hy_dens_int, hy_dens_theta_int, hy_pressure_int)
         
-        #x-direction first
+        #x-direction second
         semi_discrete_step!(state , state    , statetmp , dt / 3 , DIR_X , flux , tend,
             recvbuf_l, recvbuf_r, sendbuf_l, sendbuf_r, hy_dens_cell, hy_dens_theta_cell,
             hy_dens_int, hy_dens_theta_int, hy_pressure_int)
